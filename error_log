@@ -1,0 +1,4 @@
+[04-May-2016 00:41:17 Africa/Maputo] PHP Warning:  require(/home/multi/public_html/../bootstrap/autoload.php): failed to open stream: No such file or directory in /home/multi/public_html/index.php on line 22
+[04-May-2016 00:41:17 Africa/Maputo] PHP Fatal error:  require(): Failed opening required '/home/multi/public_html/../bootstrap/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/multi/public_html/index.php on line 22
+[04-May-2016 00:41:46 Africa/Maputo] PHP Warning:  require(/home/multi/public_html/../bootstrap/autoload.php): failed to open stream: No such file or directory in /home/multi/public_html/index.php on line 22
+[04-May-2016 00:41:46 Africa/Maputo] PHP Fatal error:  require(): Failed opening required '/home/multi/public_html/../bootstrap/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/multi/public_html/index.php on line 22

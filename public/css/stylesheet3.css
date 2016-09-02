@@ -1,0 +1,203 @@
+#slider{
+	/*background: url(../images/wood.png);*/
+	background: #ffffff;
+	height: 300px;
+}
+
+.navbar-default{
+	background: transparent;
+
+}
+
+.navbar-default {
+	padding-top: 4px;
+	/*background: url(../images/wood.png);
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    border-color: transparent;
+    font-size: 21px;
+    background: rgba(0,0,0, .2);
+    padding-bottom: 10px;
+    
+}
+
+.imgSlider{
+	max-height: 250px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #fff;
+}
+ 
+.item{
+	min-height: 250px;
+	padding: 150px;
+	color: white;
+}
+
+.item h2{
+	text-align: center;
+	border: 3px solid #fff;
+	padding: 5px;
+}
+
+.item span{
+	color: green;
+}
+
+
+.carousel-indicators .active {
+	background-color: green;
+}
+
+
+#bootom{
+	/*background: url(../images/wood.png);
+	
+	*/
+	background-color: #2D312F;
+	height: 350px;
+	text-align: center;
+	color: #fff;
+	margin-top: 0px;
+}
+.text-button{
+	margin-top: 10px;
+}
+
+#about{
+	padding: 40px 0;
+	background: #899FFF;
+}
+.about-content{
+	
+	height: 100%;
+}
+
+.about-top h2{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.about-top p,.corpo{
+	font-size: 16px;
+	max-width: 500px
+	margin:0 auto;
+	padding-bottom: 50px;
+}
+
+.titulo{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-bottom: 14px;
+	font:24px normal Oxygen;
+}
+
+/*cria nova linha*/
+p{
+    white-space:pre-wrap;
+ }
+
+/*corta o numero de linhas que devem aparecer*/
+ .corta{
+				
+	height:20px;
+    line-height:20px; 
+    overflow:hidden;
+}
+
+.btn-add-fig{
+	 padding-top: 20px;
+	 text-align: right;
+}
+
+.quadrinho{
+	position: relative;
+	overflow: hidden;
+}
+
+.baixos-overlay{
+	position: absolute;
+	background: rgba(0,0,0,.5);
+	width: 100%;
+	height: 100%;
+				
+}
+
+.quadrinho:hover .baixos-overlay{
+	top:0;
+}
+
+/*novo site css */
+
+#contant-1{
+	background-color: #5DCA88;
+}
+
+.contant-1-text-area{
+	padding: 60px;
+}
+.contant-1-block-right-img{
+	padding: 80px;
+}
+
+.contant-1-text p {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.contant-1-head h1 {
+    font-size: 36px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: #0074ec;
+    color: #4741CC;
+}
+
+.edit-button-2:hover {
+    background: none;
+    border: 3px solid #FF8B48;
+    color: #636c6c;
+}
+
+.edit-button-2 {
+    background: none;
+    border: 3px solid #FF8B48;
+    border-radius: 10px;
+    color: #636c6c;
+    padding: 8px 50px;
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.support-link{
+	padding-top: 40px;
+	
+}
+
+.support-link a{
+	padding-left: 3px;
+}
+
+.social-icon a{
+	padding-left: 3px;	
+}
+
+.footer-contant{
+	padding-top: 80px;
+}
+.footer-contant h3{
+	padding-bottom: 30px;
+}
+
+
+
+

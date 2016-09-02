@@ -1,0 +1,42 @@
+#slider{
+	background: url(../images/wood.png);
+	height: 100px;
+}
+
+.navbar-default{
+	background: transparent;
+}
+
+.navbar-default {
+	padding-top: 4px;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 21px;
+    
+}
+
+
+.navbar-default .navbar-nav>li>a {
+	color: #fff;
+}
+ 
+.item{
+	padding: 200px;
+	color: white;
+}
+
+.item h2{
+	text-align: center;
+	border: 3px solid #fff;
+	padding: 5px;
+}
+
+.item span{
+	color: green;
+}
+
+.carousel-indicators .active {
+	background-color: green;
+}
+
+

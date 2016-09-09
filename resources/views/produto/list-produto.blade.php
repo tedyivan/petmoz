@@ -92,6 +92,15 @@
 
 	</style>
 	
+	<script type="text/javascript">
+
+	
+
+
+var ajax = {{ $ajax or 'undefined' }}
+	
+
+  </script>
 	
 	
 
@@ -99,7 +108,12 @@
 
 
 	<div class="container">
-				
+				<!-- The Modal -->
+					<div id="Modal" class="modal">
+					  <span class="close">×</span>
+					  <img class="modal-content" id="img01">
+					  <div id="caption"></div>
+					</div>
 				<div class="row formulario hidden-xs">
 					
 					<div class="col-md-11">
@@ -124,9 +138,11 @@
 										<span class="glyphicon glyphicon-star gold"></span>	<label class="lbpreco">Preço: {{ $produto_img->preco }} mt</label> <span class="glyphicon glyphicon-star gold"></span>
 									</div>
 									<div style="text-center">
-										<a class="btn uppic btn-primary" role="button" data-toggle="modal" href="#show-produto" data-id="{!! $produto_img->id !!}">
+										<a class="btn uppic btn-primary" role="button" id="testeshow" >
 						               show produto <span class="glyphicon glyphicon-plus"></span>
 						            	</a>
+						            		
+						            	<button onclick="viewimage('{{ asset($produto_img->file) }}');">clicoooo</button>
 									</div>
 								</div>
 							@endforeach
@@ -135,11 +151,50 @@
 						</div>
 								
 					</div>
-				
-				<!--	<div class="col-md-1 btn-lateral ">
-						<a class="btn btn-primary" href="{{ url('/produto/create') }}">adicionar <span class="glyphicon glyphicon-plus"></span></a>
-					</div>
-				-->
+					
+					
+
+
+
+				<script type="text/javascript">
+					// Get the modal
+					var modal = document.getElementById('Modal');
+
+					// Get the image and insert it inside the modal - use its "alt" text as a caption
+					var img = document.getElementById('imgClickAndChange');
+					var modalImg = document.getElementById("img01");
+					var captionText = document.getElementById("caption");
+					
+					function viewimage (x) {
+						
+						modal.style.display = "block";
+					    modalImg.src = x;
+					    
+
+					}
+					function viewobject (x) {
+						
+						alert(x);
+					    
+
+					}
+
+					img.onclick = function(){
+					    modal.style.display = "block";
+					    modalImg.src = this.src;
+					    captionText.innerHTML = this.alt;
+					}
+
+					// Get the <span> element that closes the modal
+					var span = document.getElementsByClassName("close")[0];
+
+					// When the user clicks on <span> (x), close the modal
+					span.onclick = function() { 
+					    modal.style.display = "none";
+					}
+
+
+				</script>
 
 
 				</div>

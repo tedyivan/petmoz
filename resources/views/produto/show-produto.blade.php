@@ -177,37 +177,7 @@
 
 			@endforeach
 			
-			<!--CAROUSEL		
-            <div id="carousel-baixo" class="carousel slide">
-                
-                <!-- Carousel items 
-                <div class="carousel-inner">
-                	
-                    
-                    
-                    <div class="item active">
-                    
-                    @foreach($images as $count=>$image)
-                    		
-                    	<div class="cada-img col-xs-4 col-md-4">
-                            <img src="{{asset(($image->file))}}" alt="Image" class="img-responsive">
-                        	
-                        </div>
-                        
-                     
-                    @endforeach
-                    
-                    </div>
-                   
-                                   
-                    
-                </div>
-                
-                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-            </div>
-            -->
+			
 
 			</div>
 			<div class="row btn-add-img">

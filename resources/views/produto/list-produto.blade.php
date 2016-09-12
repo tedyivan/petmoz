@@ -90,6 +90,86 @@
 			    
 			}
 
+
+/* Inicio do Modal */
+
+						#cima {
+			    border-radius: 5px;
+			    cursor: pointer;
+			    transition: 0.3s;
+			}
+
+			#myImg:hover {opacity: 0.7;}
+			.imgHover:hover {opacity: 0.7;}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Escurecer as imagens*/
+a.darken {
+    display: inline-block;
+    background: black;
+    padding: 0;
+}
+
+a.darken img {
+    display: block;
+
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+}
+
+a.darken:hover img {
+    opacity: 0.7;
+
+}
+/*Escurecer as imagens*/
+
+
+
+
+
+
+
+
 	</style>
 	
 	<script type="text/javascript">
@@ -109,11 +189,49 @@ var ajax = {{ $ajax or 'undefined' }}
 
 	<div class="container">
 				<!-- The Modal -->
-					<div id="Modal" class="modal">
+					<div id="myModal" class="modal">
+					  
+					  <div class="modal-content">
 					  <span class="close">×</span>
-					  <img class="modal-content" id="img01">
+					  <img  id="img01">
 					  <div id="caption"></div>
+					
+					<div class="row cima">
+					    <div class="col-sm-6">
+							<div class="imgcima ">
+							<img src="" class="img-responsive" height="400px" width="400px"  id="cima"/> 
+							</div>
+						</div>
+
+						<div class="row baixo col-sm-12 text-center col-md-offset-1">
+							<div class="col-sm-3 ">
+								<a class="darken">
+									<img src="" class="img-responsive imgHover" height="150px" width="150px"  id="imgLateral1"/>
+								</a>
+							</div>
+							<div class="col-sm-3">
+								<a class="darken">
+									<img src="" class="img-responsive imgHover" height="150px" width="150px"  id="imgLateral2"/>
+								</a>
+							</div>
+							<div class="col-sm-3">
+								<a class="darken">
+									<img src="" class="img-responsive imgHover" height="150px" width="150px"  id="imgLateral3"/>
+								</a>
+							</div>
+						</div>
+
+
+
+
+
 					</div>
+					</div>
+					</div>
+
+
+
+
 				<div class="row formulario hidden-xs">
 					
 					<div class="col-md-11">
@@ -158,18 +276,24 @@ var ajax = {{ $ajax or 'undefined' }}
 
 				<script type="text/javascript">
 					// Get the modal
-					var modal = document.getElementById('Modal');
+					var modal = document.getElementById('myModal');
 
 					// Get the image and insert it inside the modal - use its "alt" text as a caption
 					var img = document.getElementById('imgClickAndChange');
 					var modalImg = document.getElementById("img01");
 					var captionText = document.getElementById("caption");
-					
+					var modalImg0 = document.getElementById("cima");
+					var imgLateral1 = document.getElementById("imgLateral1");
+					var imgLateral2 = document.getElementById("imgLateral2");
+					var imgLateral3 = document.getElementById("imgLateral3");
 					function viewimage (x) {
 						
 						modal.style.display = "block";
-					    modalImg.src = x;
-					    
+					    //modalImg.src = x;
+					    modalImg0.src = x;
+					    imgLateral1.src = x;
+					    imgLateral2.src = x;
+					    imgLateral3.src = x;
 
 					}
 					function viewobject (x) {
@@ -193,7 +317,12 @@ var ajax = {{ $ajax or 'undefined' }}
 					    modal.style.display = "none";
 					}
 
-
+					// When the user clicks anywhere outside of the modal, close it
+					window.onclick = function(event) {
+					    if (event.target == modal) {
+					        modal.style.display = "none";
+					    }
+					}
 				</script>
 
 

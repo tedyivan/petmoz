@@ -100,7 +100,7 @@
 					<div class="col-md-11">
 					<!--<h3>Produtos</h3>-->
 					
-					<h2>Todas Categorias</h2>
+					<h2>Todas Racas</h2>
 
 						<div class="row baixos">
 							@foreach($produtos_imgs as $produto_img)
@@ -109,10 +109,9 @@
 										<label class="lbnome">{{ $produto_img->nome }}</label>
 									</div>
 									<div class="thumbnail quadro">
+									   <a class="darken">
 										<img src="{{ asset($produto_img->file) }}" height="300px" width="300px" id="imgClickAndChange" onclick="changeImage('{{ asset($produto_img->file) }}')" />
-										<div class="baixos-overlay">
-											<a href="/produto/{{$produto_img->id}}" class="lupa glyphicon glyphicon-zoom-in"></a>
-										</div>
+									   </a>
 
 									</div>
 									<div class="dvpreco">

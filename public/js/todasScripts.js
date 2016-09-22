@@ -82,31 +82,8 @@ $('#testeshow').click(function(anyothername) {
     alert('hjhjhjhj')
 });      
 
+    
 
-      
-
-function clicooo(){   
-    var ar = <?php echo json_encode($produtos_imgs) ?>;
-    //alert(<?php echo json_encode($produtos_imgs) ?>);
-    JSON.parse("{{ json_encode($produtos_imgs) }}")
-    alert( ar['3'] ); 
-
-  }
-
-  $(function() {
-        
-        var jobs = JSON.parse(<?php echo json_encode($produtos_imgs) ?>);
-      
-        alert(jobs.length)  
-        for (i=0; i<jobs.length; i++) {
-        input = jobs[i];
-        alert(input.value;
-        if (input.name == "ans") {   
-            newValue = input.value;
-            alert(newValue);
-        }  
-    }
-  });
 
    function clicbt() {
         

@@ -217,6 +217,17 @@ class ProdutoController extends Controller {
 
 	}
 
+		public function showmodalproduto($id)
+	{
+		//
+		$produto =Produto::find($id);
+		$images = Image::whereProduto_id($produto->id)->get();
+		$categoria_produto = Categoria::find($produto->categoria_id);
+		$categorias = Categoria::all();
+		$servicos = Servico::all();
+
+         return view('produto.produto-modal',compact('produto','images','categoria_produto','categorias','servicos'));
+	}
 
 
 }

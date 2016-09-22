@@ -103,7 +103,7 @@
 			.imgHover:hover {opacity: 0.7;}
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
+	display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -122,7 +122,7 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 150%;
 }
 
 /* The Close Button */
@@ -140,52 +140,22 @@
     cursor: pointer;
 }
 
-/*Escurecer as imagens*/
-a.darken {
-    display: inline-block;
-    background: black;
-    padding: 0;
-}
-
-a.darken img {
-    display: block;
-
-    -webkit-transition: all 0.5s linear;
-       -moz-transition: all 0.5s linear;
-        -ms-transition: all 0.5s linear;
-         -o-transition: all 0.5s linear;
-            transition: all 0.5s linear;
-}
-
-a.darken:hover img {
-    opacity: 0.7;
-
-}
-/*Escurecer as imagens*/
-
-
-
-
+	
+	.my2Modalcenter {
+    
+    
+    
+    margin-left: -125px;
+   
+}		
 
 
 
 
 	</style>
 	
-	<script type="text/javascript">
-
-	
-
-
-var ajax = {{ $ajax or 'undefined' }}
-	
-
-  </script>
 	
 	
-
-
-
 
 	<div class="container">
 				<!-- The Modal -->
@@ -238,29 +208,40 @@ var ajax = {{ $ajax or 'undefined' }}
 					<!--<h3>Produtos</h3>-->
 					<h2>{!! $categoria->designacao !!}</h2>
 
-						<div class="row baixos">
+						<div class="row ">
 							@foreach($produtos_imgs as $produto_img)
 							 	<div class="col-md-4 cadaproduto">
 									<div class="dvnome">
 										<label class="lbnome">{{ $produto_img->nome }}</label>
 									</div>
 									<div class="thumbnail quadro">
-										<img src="{{ asset($produto_img->file) }}" height="300px" width="300px" id="imgClickAndChange" onclick="changeImage('{{ asset($produto_img->file) }}')" />
+									  <a class="darken">
+										<img src="{{ asset($produto_img->file) }}" height="300px" width="300px" data-toggle="modal" data-target="#my2Modal" />
+									  </a>	
+										<!--
 										<div class="baixos-overlay">
-											<a href="/produto/{{$produto_img->id}}" class="lupa glyphicon glyphicon-zoom-in"></a>
+											<a  data-toggle="modal" data-target="#my2Modal" class="lupa glyphicon glyphicon-zoom-in"></a>
 											
 										</div>
+										-->
+
+
+										
 
 									</div>
 									<div class="dvpreco">
 										<span class="glyphicon glyphicon-star gold"></span>	<label class="lbpreco">Preço: {{ $produto_img->preco }} mt</label> <span class="glyphicon glyphicon-star gold"></span>
+										<label class="lbcaption">{{ $produto_img->id }}</label>
 									</div>
 									<div style="text-center">
+										<!--
 										<a class="btn uppic btn-primary" role="button" id="testeshow" >
 						               show produto <span class="glyphicon glyphicon-plus"></span>
 						            	</a>
 						            		
 						            	<button onclick="viewimage('{{ asset($produto_img->file) }}');">clicoooo</button>
+										-->
+
 									</div>
 								</div>
 							@endforeach
@@ -391,7 +372,7 @@ var ajax = {{ $ajax or 'undefined' }}
             								
 											@if($count == 0)
 												<div class="item active">
-												<a href="/produto/{{$produto_img->id}}"> 
+												<a href="/produto/{{$produto_img->id}}" > 
 										           <img src="{{ asset($produto_img->file) }}" id="imgClickAndChange" onclick="changeImage('{{ asset($produto_img->file) }}')" />
 									      		   <div class="carousel-caption">
 									      		   		<label class="lbcaption">{{ $produto_img->nome }}</label><br>
@@ -448,6 +429,105 @@ var ajax = {{ $ajax or 'undefined' }}
 				
 				</div>
 
+				<!-- modal 2 ajax                                             -->
+
+				<div class="modal fade" id="my2Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  <div class="modal-dialog " role="document">
+				    <div class="modal-content my2Modalcenter">
+				      <!--
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				      </div>
+				      -->
+				      <div class="modal-body">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <div id="modal-body-id">
+				        	
+				        </div>
+				      </div>
+				      <!--
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				      </div>
+				      -->
+				    </div>
+				  </div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+				<button id="getRequest">Get Request</button>
+				<div id="dialogDiv"></div>
+
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#my2Modal">
+  Launch demo modal2
+</button>
+-->
+				<script type="text/javascript">
+				$("#my2Modal").on("show.bs.modal", function(e) {
+				    var link = $(e.relatedTarget);
+				    
+					$.get('/produtomodal/1',function (data) {
+									
+									console.log(data);
+									
+									//$(this).find(".modal-body").load(data);
+									$('#modal-body-id').html(data);
+
+								});
+
+
+
+
+				});
+
+					$(document).ready(
+						function(){
+							$('#getRequest').click(function () {
+								$.get('/produto/1',function (data) {
+									
+									console.log(data);
+									$('#dialogDiv').html(data);
+
+								});
+
+								}
+								);
+							
+						} 
+					)	
+
+					
+
+					
+
+				  </script>
 
 	</div>
 

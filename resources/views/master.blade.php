@@ -10,6 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 </head>
+
 <body>
 <section id="menu" class="navbar-fixed-top">
 	<nav class="navbar navbar-default">

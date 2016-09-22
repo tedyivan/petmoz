@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function ()
 Route::get('produtos/{categoria}','ProdutoController@produtos');
 
 
+Route::get('produtomodal/{id}','ProdutoController@showmodalproduto');
 
 
 Route::resource('produto', 'ProdutoController'); 

@@ -198,6 +198,49 @@ p{
 	padding-bottom: 30px;
 }
 
+/*Escurecer as imagens*/
+a.darken {
+    display: inline-block;
+    background: black;
+    padding: 0;
+}
+
+a.darken img {
+    display: block;
+
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+}
+
+a.darken:hover img {
+    opacity: 0.7;
+
+}
+/*Escurecer as imagens*/
+/*Escurecer as imagens*/
+			a.darken {
+			    display: inline-block;
+			    background: black;
+			    padding: 0;
+			}
+
+			a.darken img {
+			    display: block;
+
+			    -webkit-transition: all 0.5s linear;
+			       -moz-transition: all 0.5s linear;
+			        -ms-transition: all 0.5s linear;
+			         -o-transition: all 0.5s linear;
+			            transition: all 0.5s linear;
+			}
+
+			a.darken:hover img {
+			    opacity: 0.7;
+
+			}
 
 
 

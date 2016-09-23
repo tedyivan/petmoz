@@ -216,7 +216,8 @@
 									</div>
 									<div class="thumbnail quadro">
 									  <a class="darken">
-										<img src="{{ asset($produto_img->file) }}" height="300px" width="300px" data-toggle="modal" data-target="#my2Modal" />
+										<img src="{{ asset($produto_img->file) }}" height="300px" width="300px" data-toggle="modal" id="{{ $produto_img->id }}" data-target="#my2Modal" onclick="setIdProduto('{{ $produto_img->id }}')" />
+									  	<label class="lbcaption">{{ $produto_img->id }}</label>
 									  </a>	
 										<!--
 										<div class="baixos-overlay">
@@ -231,7 +232,7 @@
 									</div>
 									<div class="dvpreco">
 										<span class="glyphicon glyphicon-star gold"></span>	<label class="lbpreco">Preço: {{ $produto_img->preco }} mt</label> <span class="glyphicon glyphicon-star gold"></span>
-										<label class="lbcaption">{{ $produto_img->id }}</label>
+										
 									</div>
 									<div style="text-center">
 										<!--
@@ -490,10 +491,16 @@
 </button>
 -->
 				<script type="text/javascript">
+				var idProduto = '1';
+				function setIdProduto (arg) {
+					idProduto = arg;
+				}
+
 				$("#my2Modal").on("show.bs.modal", function(e) {
 				    var link = $(e.relatedTarget);
+				    alert(idProduto);
 				    
-					$.get('/produtomodal/1',function (data) {
+					$.get('/produtomodal/'+idProduto,function (data) {
 									
 									console.log(data);
 									

@@ -34,7 +34,7 @@ Route::get('produtos/{categoria}','ProdutoController@produtos');
 
 
 Route::get('produtomodal/{id}','ProdutoController@showmodalproduto');
-
+Route::get('produtomobile/{id}','ProdutoController@showprodutomobile');
 
 Route::resource('produto', 'ProdutoController'); 
 

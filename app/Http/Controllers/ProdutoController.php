@@ -230,4 +230,18 @@ class ProdutoController extends Controller {
 	}
 
 
+	public function showprodutomobile($id)
+	{
+		$produto =Produto::find($id);
+		$images = Image::whereProduto_id($produto->id)->get();
+		$categoria_produto = Categoria::find($produto->categoria_id);
+		$categorias = Categoria::all();
+		$servicos = Servico::all();
+
+         return view('produto.show-produto-mobile',compact('produto','images','categoria_produto','categorias','servicos'));
+
+	}
+
+
+
 }

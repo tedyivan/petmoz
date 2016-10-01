@@ -153,7 +153,7 @@
             								
 											@if($count == 0)
 												<div class="item active">
-												<a href="/produto/{{$produto_img->id}}"> 
+												<a href="/produtomobile/{{$produto_img->id}}"> 
 										           <img src="{{ asset($produto_img->file) }}" id="imgClickAndChange" onclick="changeImage('{{ asset($produto_img->file) }}')" />
 									      		   <div class="carousel-caption">
 									      		   		<label class="lbcaption">{{ $produto_img->nome }}</label><br>
@@ -165,7 +165,7 @@
 										    @else
 										    
 										    <div class="item">
-										    	<a href="/produto/{{$produto_img->id}}">
+										    	<a href="/produtomobile/{{$produto_img->id}}">
 										    	   <img src="{{ asset($produto_img->file) }}" id="imgClickAndChange" onclick="changeImage('{{ asset($produto_img->file) }}')" />
 										   		   <div class="carousel-caption letrascaorousel">
 									      		   		<label class="lbcaption">{{ $produto_img->nome }}</label><br>

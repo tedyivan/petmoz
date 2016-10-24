@@ -120,6 +120,11 @@
 			    width: 80%;
 			}
 
+			.baixos{
+				text-align: center;
+			}
+			
+
 	</style>
 	<!-- A parte do modal para fazer upload-->
 	<div class="modal fade" id="upload" tabindex="-1" aria-hidden="true" role="dialog">
@@ -179,9 +184,26 @@
 			<div>
 			<div class="row baixos ">
 			  <!--VISUALIZACAO EM FRAMES-->
-			  
+			 <div style="padding-left:54px;">
+			 <?php $conta = 0; ?>
+		
 			@foreach($images as $image)
-			 	<div class="col-md-3 col-xs-4 ">
+			 	
+			   @if($conta == 0)
+			   	<div class="col-md-3 col-xs-4"  >
+					<div class="baixos-icon ">
+						
+					  <a class="darken">
+						<img src="{{ asset($image->file) }}" class=" imgHover" height="150px" width="150px" id="imgClickAndChange" onclick="viewimagetop('{{ asset($image->file) }}')" />
+					  </a>
+
+										
+
+					</div>
+				</div>
+
+			   @else
+			 	<div class="col-md-3 col-xs-4 col-md-offset-1">
 					<div class="baixos-icon ">
 						
 					  <a class="darken">
@@ -193,9 +215,11 @@
 					</div>
 				</div>
 				
-
+				@endif
+				<?php $conta++?>
 			@endforeach
 			
+			</div>
 
 			</div>
 			

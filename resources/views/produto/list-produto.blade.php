@@ -49,13 +49,14 @@
 
 			.lbnome{
 				font-size:large; 
+
 				
 
 			}
 
 			.lbpreco{
 				font-size:medium;
-
+				color: #fff;
 			}
 
 			.lbcaption{
@@ -148,10 +149,18 @@
     margin-left: -125px;
    
 }		
+		.imagemThumb{
+		    width:100%;
+		    max-width:300px;
+		    height: 340px;
+		    
+		}
 
-
-
-
+.baixos-icon a img{
+	display: block;
+	margin: auto;
+}
+		
 	</style>
 	
 	
@@ -167,24 +176,25 @@
 					  <div id="caption"></div>
 					
 					<div class="row cima">
-					    <div class="col-sm-6">
+					    <div class="col-md-6">
 							<div class="imgcima ">
 							<img src="" class="img-responsive" height="400px" width="400px"  id="cima"/> 
 							</div>
 						</div>
 
-						<div class="row baixo col-sm-12 text-center col-md-offset-1">
-							<div class="col-sm-3 ">
+						<div class="row baixo col-md-12 ">
+							<div class="col-md-2"></div>
+							<div class="col-md-3 col-dm-offset-2 ">
 								<a class="darken">
 									<img src="" class="img-responsive imgHover" height="150px" width="150px"  id="imgLateral1"/>
 								</a>
 							</div>
-							<div class="col-sm-3">
+							<div class="col-md-3 medio">
 								<a class="darken">
 									<img src="" class="img-responsive imgHover" height="150px" width="150px"  id="imgLateral2"/>
 								</a>
 							</div>
-							<div class="col-sm-3">
+							<div class="col-md-3 medio">
 								<a class="darken">
 									<img src="" class="img-responsive imgHover" height="150px" width="150px"  id="imgLateral3"/>
 								</a>
@@ -202,22 +212,27 @@
 
 
 
-				<div class="row formulario hidden-xs">
-					
+				<div class="row formulario ">
+					<div style="height:45px;">
+				
+					</div>
 					<div class="col-md-11">
 					<!--<h3>Produtos</h3>-->
-					<h2>{!! $categoria->designacao !!}</h2>
+					<h2 class="titulo">{!! $categoria->designacao !!}</h2>
 
-						<div class="row ">
+						<div class="row hidden-xs">
 							@foreach($produtos_imgs as $produto_img)
-							 	<div class="col-md-4 cadaproduto">
+							 	<div class="col-md-4 col-xs-4 cadaproduto">
 									<div class="dvnome">
 										<label class="lbnome">{{ $produto_img->nome }}</label>
 									</div>
-									<div class="thumbnail quadro">
-									  <a class="darken">
-										<img src="{{ asset($produto_img->file) }}" height="300px" width="300px" data-toggle="modal" id="{{ $produto_img->id }}" data-target="#my2Modal" onclick="setIdProduto('{{ $produto_img->id }}')" />
-									  	<label class="lbcaption">{{ $produto_img->id }}</label>
+									<div class="thumbnail quadro imagemThumb">
+									  <a class="darken" >
+										<img src="{{ asset($produto_img->file) }}" height="400px" width="300px" style="height:300px" data-toggle="modal" id="{{ $produto_img->id }}" data-target="#my2Modal" onclick="setIdProduto('{{ $produto_img->id }}')" />
+									  	<div class="dvpreco">
+											<span class="glyphicon glyphicon-star gold"></span>	<label class="lbpreco">Preço: {{ $produto_img->preco }} mt</label> <span class="glyphicon glyphicon-star gold"></span>
+										
+										</div>
 									  </a>	
 										<!--
 										<div class="baixos-overlay">
@@ -230,10 +245,12 @@
 										
 
 									</div>
+									<!--
 									<div class="dvpreco">
 										<span class="glyphicon glyphicon-star gold"></span>	<label class="lbpreco">Preço: {{ $produto_img->preco }} mt</label> <span class="glyphicon glyphicon-star gold"></span>
 										
 									</div>
+									-->
 									<div style="text-center">
 										<!--
 										<a class="btn uppic btn-primary" role="button" id="testeshow" >
@@ -249,7 +266,52 @@
 											
 
 						</div>
-								
+						<div class="row hidden-lg">
+							@foreach($produtos_imgs as $produto_img)
+							 	<div class="col-xs-12 cadaproduto">
+									<div class="dvnome">
+										<label class="lbnome">{{ $produto_img->nome }}</label>
+									</div>
+									<div class="thumbnail quadro">
+									  <a class="darken" href="/produtomobile/{{$produto_img->id}}">
+										<img src="{{ asset($produto_img->file) }}" height="300px" width="300px" style="height:300px" />
+									  	<div class="dvpreco">
+											<span class="glyphicon glyphicon-star gold"></span>	<label class="lbpreco">Preço: {{ $produto_img->preco }} mt</label> <span class="glyphicon glyphicon-star gold"></span>
+										
+										</div>
+									  </a>	
+										<!--
+										<div class="baixos-overlay">
+											<a  data-toggle="modal" data-target="#my2Modal" class="lupa glyphicon glyphicon-zoom-in"></a>
+											
+										</div>
+										-->
+
+
+										
+
+									</div>
+									<!--
+									<div class="dvpreco">
+										<span class="glyphicon glyphicon-star gold"></span>	<label class="lbpreco">Preço: {{ $produto_img->preco }} mt</label> <span class="glyphicon glyphicon-star gold"></span>
+										
+									</div>
+									-->
+									<div style="text-center">
+										<!--
+										<a class="btn uppic btn-primary" role="button" id="testeshow" >
+						               show produto <span class="glyphicon glyphicon-plus"></span>
+						            	</a>
+						            		
+						            	<button onclick="viewimage('{{ asset($produto_img->file) }}');">clicoooo</button>
+										-->
+
+									</div>
+								</div>
+							@endforeach
+											
+
+						</div>		
 					</div>
 					
 					
@@ -353,83 +415,7 @@
 
 
 
-				<div class="row formulario hidden-lg">
-				<div class="hidden-lg">
-							<h3>Produtos</h3>
-							<div id="carouselProduto" class="carousel slide" data-ride="carousel" data-interval="false" >
-								  <!-- Indicators -->
-								  <!--
-								  <ol class="carousel-indicators">
-								    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-								    <li data-target="#myCarousel" data-slide-to="1"></li>
-								    <li data-target="#myCarousel" data-slide-to="2"></li>
-								    <li data-target="#myCarousel" data-slide-to="3"></li>
-								  </ol>
-									-->
-								  <!-- Wrapper for slides -->
-								  <div class="carousel-inner" role="listbox">
-								    
-									@foreach($produtos_imgs as $count=>$produto_img)
-            								
-											@if($count == 0)
-												<div class="item active">
-												<a href="/produto/{{$produto_img->id}}" > 
-										           <img src="{{ asset($produto_img->file) }}" id="imgClickAndChange" onclick="changeImage('{{ asset($produto_img->file) }}')" />
-									      		   <div class="carousel-caption">
-									      		   		<label class="lbcaption">{{ $produto_img->nome }}</label><br>
-									      		   		<label class="lbcaption">{{ $produto_img->preco }}</label>	
-									      		   </div>	
-
-									      		</div>
-										    	</a>
-										    @else
-										    
-										    <div class="item">
-										    	<a href="/produto/{{$produto_img->id}}">
-										    	   <img src="{{ asset($produto_img->file) }}" id="imgClickAndChange" onclick="changeImage('{{ asset($produto_img->file) }}')" />
-										   		   <div class="carousel-caption letrascaorousel">
-									      		   		<label class="lbcaption">{{ $produto_img->nome }}</label><br>
-									      		   		<label class="lbcaption">{{ $produto_img->preco }}</label>	
-									      		   </div>
-									      		</a>	
-										    </div>
-										    
-										    @endif
-
-										  <div class="hidden">
-										   {{++$count }}
-										   </div>
-									
-									@endforeach
-
-
-
-
-
-
-
-
-
-
-								  </div>
-
-								  <!-- Left and right controls -->
-								  <a class="left carousel-control" href="#carouselProduto" role="button" data-slide="prev">
-								    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-								    <span class="sr-only">Previous</span>
-								  </a>
-								  <a class="right carousel-control" href="#carouselProduto" role="button" data-slide="next">
-								    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								    <span class="sr-only">Next</span>
-								  </a>
-							</div>
-
-
-
-						</div>
 				
-				</div>
-
 				<!-- modal 2 ajax                                             -->
 
 				<div class="modal fade" id="my2Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -498,7 +484,7 @@
 
 				$("#my2Modal").on("show.bs.modal", function(e) {
 				    var link = $(e.relatedTarget);
-				    alert(idProduto);
+				    //alert(idProduto);
 				    
 					$.get('/produtomodal/'+idProduto,function (data) {
 									

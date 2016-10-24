@@ -135,22 +135,56 @@
 
 
 
-
-
-
 	</style>
 
-	<!--<section id="abaut">-->
+	<section id="abaut">
 			
-			<div id="makeMeScrollable">
-				<img src="/images/jesus.jpg" alt="Field" id="field" />
-				<img src="/images/jesus.jpg" alt="Gnome" id="gnome" />
-				<img src="/images/jesus.jpg" alt="Pencils" id="pencils" />
-				<img src="/images/jesus.jpg" alt="Golf" id="golf" />
+			<div style="height:80px;">
 				
 			</div>
-	
-	
+			<h2 class="titulo">{!! $produto->nome !!}</h2>
+			
+			<div id="makeMeScrollable">
+				
+				@foreach($images as $image)
+					 <img src="{{ asset($image->file) }}"  height="300px"   />
+								
+				@endforeach
+				
+			</div>
+		
+	  <div class="container">
+	  		<div style="height:20px;">
+				
+			</div>
+	  	    <div class="form-group">
+					<label>Nome : </label>
+					{!! $produto->nome !!}
+				</div>
+
+				<div class="form-group">
+					<label>Preco: </label>
+					{!! $produto->preco !!} mt
+				</div>
+				<div class="form-group">
+					<label>Descricao: </label>
+					{!! $produto->descricao !!}
+				</div>
+
+				<div class="form-group">
+					<label>Raca:</label>
+					{!!$categoria_produto->designacao!!}
+				</div>
+	  </div>
+
+
+
+
+
+
+
+
+		
 	
 	<script src="/js/customer_jquery/jquery.1.10.2.min.js"  type="text/javascript"></script>
 		
@@ -188,74 +222,10 @@
 	</script>
 	
 
-	<!--</section>-->
+	</section>
 
 	
 
-
-	<section id="abaute" >
-		<div class="row conteudo baixos ">
-		
-
-					<p class="titulo text-left">{!! $produto->nome !!}</p>	
-								
-					<div style="overflow: auto">
-					<div class="row baixos row-fluid">
-					  <!--VISUALIZACAO EM FRAMES-->
-					@foreach($images as $image)
-					 	<div class="col-md-4 col-xs-9 ">
-							<div class="baixos-icon">
-								<img src="{{ asset($image->file) }}"  height="300px" width="250px" id="imgClickAndChange" onclick="changeImage('{{ asset($image->file) }}')" />
-								
-								
-
-							</div>
-						</div>
-						
-
-					@endforeach
-					
-					
-
-					</div>
-					</div>
-
-				
-		</div>		
-		
-		<div class="dadosproduto col-md-3 col-xs-12">
-				<div class="form-group">
-					<label>Nome : </label>
-					{!! $produto->nome !!}
-				</div>
-
-				<div class="form-group">
-					<label>Preco: </label>
-					{!! $produto->preco !!} mt
-				</div>
-
-				<div class="form-group">
-					<label>Descricao: </label>
-					{!! $produto->descricao !!}
-				</div>
-
-				<div class="form-group">
-					<label>Categoria:</label>
-					{!!$categoria_produto->designacao!!}
-				</div>
-		</div>
-		
-		</div>
-		
-		<div class="row btn-baixos">
-			
-			<a href="{{ url('/produto/') }}" class="btn btn-primary" role="button">
-               Voltar
-               <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-		</div>
-		
-	</section>
 
 	
 																			

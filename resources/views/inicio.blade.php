@@ -214,8 +214,11 @@
                   <div class="about-top" >
                     @if($texto->posicao == 0)
                     
-                      <h2>{!! $texto->titulo !!}</h2>
-                      <p>{!! $texto->descricao !!}</p>
+                      <h2 class="titulo1">{!! $texto->titulo !!}</h2>
+                        <div style="height:30px;">
+        
+                        </div>
+                      <p class="texto">{!! $texto->descricao !!}</p>
                     @endif
                     
                   </div>
@@ -301,8 +304,11 @@
 
 
 
-                <h2 class="titulo">{!! $texto->titulo !!}</h2>
-                <p>{!! $texto->descricao !!}</p>
+                <h3 class="tituloRed">{!! $texto->titulo !!}</h3>
+                <div style="height:35px;">
+        
+                </div>
+                <p class="texto">{!! $texto->descricao !!}</p>
               @endif
             </div>
          @endforeach

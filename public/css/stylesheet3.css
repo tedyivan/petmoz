@@ -94,7 +94,39 @@
 	font-weight: bold;
 	padding-bottom: 14px;
 	font:24px normal Oxygen;
+	
 }
+
+.titulo1{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-bottom: 14px;
+	font:24px normal Oxygen;
+	color: #FC0;
+	color: #fff;
+	text-shadow: 0px 0px 1px #000;
+}
+.tituloRed{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #F00;
+	padding-bottom: 14px;
+	font:24px normal Oxygen;
+	
+}
+
+.texto{
+
+	font-weight: bold;
+	padding-bottom: 14px;
+	font:24px normal Oxygen;
+}
+
+
+
+
 
 /*cria nova linha*/
 p{
@@ -242,5 +274,7 @@ a.darken:hover img {
 
 			}
 
-
+.dropdown-menu {
+	min-width: 300px;
+}
 

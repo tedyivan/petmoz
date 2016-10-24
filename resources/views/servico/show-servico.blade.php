@@ -26,10 +26,13 @@
 
     <section id="about" class="text-center">
         <div class="container" >
+        	<div style="height:45px;">
+				
+			</div>
         	<div class="row">
             <div class="about-top" >
          
-                <h2 class="titulo">{!! $servico->designacao !!}</h2>
+                <h2 class="titulo1">{!! $servico->designacao !!}</h2>
                   
             </div>
          
@@ -73,7 +76,7 @@
     <section id="texto-about" >
       <div class="container">
 
-       <h2 class="titulo">{!! $servico->designacao !!}</h2>
+       <h3 class="tituloRed">{!! $servico->designacao !!}</h3>
        <p class="corpo">{!! $servico->descricao !!} </p>
       </div>
     </section>

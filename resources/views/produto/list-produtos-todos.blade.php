@@ -96,11 +96,13 @@
 	<div class="container">
 				
 				<div class="row formulario hidden-xs">
-					
+					<div style="height:45px;">
+				
+					</div>
 					<div class="col-md-11">
 					<!--<h3>Produtos</h3>-->
 					
-					<h2>Todas Racas</h2>
+					<h2 class="titulo">Todas Racas</h2>
 
 						<div class="row baixos">
 							@foreach($produtos_imgs as $produto_img)
@@ -135,6 +137,9 @@
 
 				<div class="row formulario hidden-lg">
 				<div class="hidden-lg">
+						<div style="height:45px;">
+						
+						</div>
 							<h3>Produtos</h3>
 							<div id="carouselProduto" class="carousel slide" data-ride="carousel" data-interval="false" >
 								  <!-- Indicators -->
